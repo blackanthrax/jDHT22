@@ -26,4 +26,8 @@ public class Measurement {
         this.temperature = temperature;
     }
 
+    public String toString() {
+        return String.format("Hum: %s ; Temp: %s", this.humidity, this.temperature);
+    }
+
 }
