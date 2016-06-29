@@ -113,11 +113,15 @@ void throwException(JNIEnv *env, const char *message){
   */
 JNIEXPORT jobject JNICALL Java_com_github_blackanthrax_terracontrol_jni_SensorAdapter_getMeasurement(JNIEnv *env, jobject object){
     
-    DHTPIN = //read configs here
+    //DHTPIN = //read configs here
         
     int tries = 100;
     float temp;
     float hum;
+
+    if(wiringPiSetup() == -1){
+        throwException(env, "failed to load wiringPiSetup");
+    }
 
     while(read_dht22_dat(&temp, &hum) == 0 && tries--){
 	delay(1000);
