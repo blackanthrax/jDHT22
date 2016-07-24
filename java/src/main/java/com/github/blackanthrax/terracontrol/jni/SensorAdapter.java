@@ -6,7 +6,7 @@ public class SensorAdapter {
         System.loadLibrary("am2302jni");
     }
 
-    private native Measurement getMeasurement() throws MeasurementException;
+    public native Measurement getMeasurement() throws MeasurementException;
 
     public static void main(String[] args) {
         System.out.println(new SensorAdapter()
