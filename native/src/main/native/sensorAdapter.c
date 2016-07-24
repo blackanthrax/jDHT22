@@ -7,8 +7,6 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-#include "locking.h"
-
 #define MAXTIMINGS 85
 static int DHTPIN = 7;
 static int dht22_dat[5] = {0,0,0,0,0};
@@ -83,8 +81,8 @@ static int read_dht22_dat(float *temperature, float *humidity)
 
 
     //printf("Humidity = %.2f %% Temperature = %.2f *C \n", h, t );
-    *humidity = *h;
-    *temperature = *t;
+    *humidity = h;
+    *temperature = t;
     return 1;
   }
   else
@@ -99,11 +97,11 @@ static int read_dht22_dat(float *temperature, float *humidity)
   * JNI EXCEPTION
   */ 
 void throwException(JNIEnv *env, const char *message){
-    jclass exception = (*env)->Findclass(env, "com/github/blackanthrax/terracontrol/jni/MeasurementException");
-    if (class != NULL) {
-        (*env)->ThrowNew(env, class, message);
+    jclass exception = (*env)->FindClass(env, "com/github/blackanthrax/terracontrol/jni/MeasurementException");
+    if (exception != NULL) {
+        (*env)->ThrowNew(env, exception, message);
     }   
-    (*env)->DeleteLocalRef(env, class);
+    (*env)->DeleteLocalRef(env, exception);
 }
 
 

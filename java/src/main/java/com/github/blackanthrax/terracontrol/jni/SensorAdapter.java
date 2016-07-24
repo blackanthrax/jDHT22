@@ -9,7 +9,8 @@ public class SensorAdapter {
     public native Measurement getMeasurement() throws MeasurementException;
 
     public static void main(String[] args) {
-        System.out.println(new SensorAdapter()
+         System.out.println("reading...");
+	 System.out.println(new SensorAdapter()
             .getMeasurement()
             .toString());
     }

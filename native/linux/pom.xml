@@ -55,8 +55,10 @@
           </compilerStartOptions>
 
           <linkerStartOptions>
-            <linkerStartOption>-shared</linkerStartOption>
+            <linkerStartOption>-shared -l wiringPi</linkerStartOption>
           </linkerStartOptions>
+
+          <linkerFinalName>libam2302jni</linkerFinalName>
 
         </configuration>
 
