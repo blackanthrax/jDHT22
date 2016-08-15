@@ -1,6 +1,6 @@
-package com.github.blackanthrax.terracontrol.jni;
+package com.github.blackanthrax.jdht22;
 
-public class SensorAdapter {
+public class Sensor {
 
     static {
         System.loadLibrary("am2302jni");

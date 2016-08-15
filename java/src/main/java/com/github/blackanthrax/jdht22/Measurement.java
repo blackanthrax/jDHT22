@@ -1,4 +1,4 @@
-package com.github.blackanthrax.terracontrol.jni;
+package com.github.blackanthrax.jdht22;
 
 public class Measurement {
 

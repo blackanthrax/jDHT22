@@ -1,4 +1,4 @@
-package com.github.blackanthrax.terracontrol.jni;
+package com.github.blackanthrax.jdht22;
 
 import java.io.PrintStream;
 import java.io.PrintWriter;
