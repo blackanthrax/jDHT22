@@ -12,7 +12,7 @@
   <dependencies>
     <dependency>
       <groupId>com.github.blackanthrax</groupId>
-      <artifactId>java</artifactId>
+      <artifactId>jDHT22</artifactId>
       <version>1.0</version>
       <type>jar</type>
       <scope>compile</scope>

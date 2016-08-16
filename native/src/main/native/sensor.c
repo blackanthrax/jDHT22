@@ -116,7 +116,9 @@ JNIEXPORT jobject JNICALL Java_com_github_blackanthrax_jdht22_Sensor_getMeasurem
 	jfieldID fid = (*env)->GetFieldID(env, cls, "pin", "I");
 	int pin = (*env)->GetIntField(env, obj, fid);
 
-    pin > 0 ? DHTPIN = pin : DHTPIN = DHTPIN;
+    if(pin > 0) {
+        DHTPIN = pin;
+    }
         
     int tries = 100;
     float temp;
