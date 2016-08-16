@@ -1,4 +1,4 @@
-#include <sensorAdapter.h>
+#include <sensor.h>
 #include <jni.h>
 #include <wiringPi.h>
 #include <stdio.h>
@@ -109,9 +109,14 @@ void throwException(JNIEnv *env, const char *message){
 /**
   * JNI INTERFACE
   */
-JNIEXPORT jobject JNICALL Java_com_github_blackanthrax_terracontrol_jni_SensorAdapter_getMeasurement(JNIEnv *env, jobject object){
+JNIEXPORT jobject JNICALL Java_com_github_blackanthrax_jdht22_Sensor_getMeasurement
+  (JNIEnv *env, jobject obj){
     
-    //DHTPIN = //read configs here
+	jclass cls = (*env)->GetObjectClass(env, obj);
+	jfieldID fid = (*env)->GetFieldID(env, cls, "pin", "I");
+	int pin = (*env)->GetIntField(env, obj, fid);
+
+    pin > 0 ? DHTPIN = pin : DHTPIN = DHTPIN;
         
     int tries = 100;
     float temp;
@@ -126,7 +131,7 @@ JNIEXPORT jobject JNICALL Java_com_github_blackanthrax_terracontrol_jni_SensorAd
     }
   
     jmethodID ctor;
-    jclass cls = (*env)->FindClass(env, "com/github/blackanthrax/terracontrol/jni/Measurement");
+    cls = (*env)->FindClass(env, "com/github/blackanthrax/terracontrol/jni/Measurement");
     if(cls != NULL) {
       ctor = (*env)->GetMethodID(env, cls, "<init>", "(DD)V"); //DD = constructor requires 2 double, V returns void
     }

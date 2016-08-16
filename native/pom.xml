@@ -3,8 +3,8 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.github.blackanthrax</groupId>
-    <artifactId>terracontrol-jnisensors</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>jDHT22</artifactId>
+    <version>1.0</version>
   </parent>
   <packaging>pom</packaging>
   <artifactId>native</artifactId>
